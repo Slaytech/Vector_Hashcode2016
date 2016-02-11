@@ -1,0 +1,47 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <Windows.h>
+#include <vector>
+
+int main()
+{
+	std::ifstream readfile;
+
+	readfile.open("busy_day.txt");
+
+	if (readfile.is_open())
+	{
+			for (int i = 0; i <= 4; i++)
+			{
+				if (i == 0)
+				{
+					std::string gridRowsString;
+					std::string gridColsString;
+					getline(readfile, gridColsString, ' ');
+					std::cout << gridColsString << std::endl;
+					getline(readfile, gridColsString, ' ');
+					std::cout << gridColsString << std::endl;
+					int gridRows = atoi(gridRowsString.c_str());
+					int gridCols = atoi(gridColsString.c_str());
+
+					std::vector<std::vector<int> > gridSize;
+				}
+			}
+	}
+
+	system("pause");
+
+	return 0;
+}
+
+/*
+2D array of rows and cols in grid
+2D array contains warehouse pos
+1D array of product types
+Warehouse is an object: contains row int, col int, and array of products(int)
+Warehouse has 2 functions: get and set
+Drone is an object: contains row int, col int, max weight int, current weight int, items held array
+Drone has 4 functions: unload, load, deliver, wait
+
+*/
